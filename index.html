@@ -1,0 +1,5534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="theme-color" content="#090810">
+
+    <title>Axion Digital Systems | Technology That Moves Business Forward</title>
+
+    <meta name="description"
+          content="Axion Digital Systems provides ERP solutions, software development, web development, IT solutions, hardware and technical services.">
+
+    <link rel="icon"
+          type="image/png"
+          href="images/light_logo.png">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =========================================================
+           AXION DIGITAL SYSTEMS
+           SINGLE PAGE GLASSMORPHISM WEBSITE
+        ========================================================= */
+
+        :root {
+
+            --bg: #08070e;
+            --bg-secondary: #0d0b16;
+
+            --glass: rgba(255, 255, 255, 0.045);
+            --glass-hover: rgba(255, 255, 255, 0.065);
+
+            --border: rgba(255, 255, 255, 0.115);
+            --border-light: rgba(255, 255, 255, 0.18);
+
+            --text: #f7f7fb;
+            --muted: #aaa7b6;
+            --muted-dark: #777481;
+
+            --purple: #8057ff;
+            --purple-light: #ad91ff;
+
+            --blue: #55a8ff;
+            --cyan: #68e7ff;
+
+            --site-width: 1400px;
+
+            --navbar-height: 72px;
+
+            --radius: 28px;
+            --radius-small: 18px;
+
+            --section-padding: 120px;
+
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            background:
+
+                radial-gradient(
+                    circle at 8% 5%,
+                    rgba(111, 72, 255, 0.14),
+                    transparent 27%
+                ),
+
+                radial-gradient(
+                    circle at 92% 48%,
+                    rgba(49, 139, 255, 0.09),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #08070e 0%,
+                    #0d0b17 50%,
+                    #090811 100%
+                );
+
+            color: var(--text);
+
+            font-family: "Inter", sans-serif;
+
+            line-height: 1.6;
+
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+
+        img {
+            max-width: 100%;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+
+        /* =========================================================
+           BACKGROUND GRID
+        ========================================================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -10;
+
+            pointer-events: none;
+
+            opacity: 0.22;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 70px 70px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black 0%,
+                    rgba(0,0,0,0.4) 60%,
+                    transparent 100%
+                );
+        }
+
+
+        /* =========================================================
+           AMBIENT GLOWS
+        ========================================================= */
+
+        .background-glow {
+
+            position: fixed;
+
+            width: 480px;
+            height: 480px;
+
+            border-radius: 50%;
+
+            filter: blur(110px);
+
+            opacity: 0.10;
+
+            pointer-events: none;
+
+            z-index: -9;
+        }
+
+
+        .glow-one {
+
+            top: -220px;
+            left: -170px;
+
+            background: #754cff;
+        }
+
+
+        .glow-two {
+
+            right: -250px;
+            top: 45%;
+
+            background: #308dff;
+        }
+
+
+        /* =========================================================
+           MAIN SITE FRAME
+        ========================================================= */
+
+        .site-frame {
+
+            width: min(94%, var(--site-width));
+
+            margin: 30px auto;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border:
+                1px solid rgba(255,255,255,0.13);
+
+            border-radius: 25px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.035),
+                    rgba(255,255,255,0.012)
+                );
+
+            box-shadow:
+
+                0 45px 130px rgba(0,0,0,0.55),
+
+                inset 0 1px
+                rgba(255,255,255,0.045);
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .navbar {
+
+            position: sticky;
+
+            top: 15px;
+
+            z-index: 1000;
+
+            width: min(94%, 1230px);
+
+            min-height: var(--navbar-height);
+
+            margin: 15px auto 0;
+
+            padding: 10px 17px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 18px;
+
+            background:
+                rgba(9,8,16,0.76);
+
+            backdrop-filter:
+                blur(24px);
+
+            -webkit-backdrop-filter:
+                blur(24px);
+
+            box-shadow:
+
+                0 18px 55px rgba(0,0,0,0.32),
+
+                inset 0 1px
+                rgba(255,255,255,0.045);
+        }
+
+
+        /* =========================================================
+           LOGO
+        ========================================================= */
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-shrink: 0;
+
+            line-height: 0;
+        }
+
+
+        .logo img {
+
+            display: block;
+
+            width: 168px;
+
+            height: auto;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================================================
+           DESKTOP NAVIGATION
+        ========================================================= */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 3px;
+
+            flex: 1;
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+
+            padding: 10px 13px;
+
+            border-radius: 10px;
+
+            color: #a5a2b0;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            white-space: nowrap;
+
+            transition:
+                color .25s ease,
+                background .25s ease;
+        }
+
+
+        .nav-links a:hover {
+
+            color: white;
+
+            background:
+                rgba(255,255,255,0.05);
+        }
+
+
+        .nav-links a.active {
+
+            color: white;
+
+            background:
+                rgba(255,255,255,0.045);
+        }
+
+
+        .nav-links a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            bottom: 4px;
+
+            width: 4px;
+            height: 4px;
+
+            transform:
+                translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                var(--purple-light);
+
+            box-shadow:
+                0 0 13px var(--purple);
+        }
+
+
+        /* =========================================================
+           NAV BUTTON
+        ========================================================= */
+
+        .nav-button {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 42px;
+
+            padding:
+                0 18px;
+
+            flex-shrink: 0;
+
+            border:
+                1px solid
+                rgba(174,141,255,0.42);
+
+            border-radius: 11px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(118,75,255,0.56),
+                    rgba(77,54,155,0.34)
+                );
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            box-shadow:
+
+                0 0 25px
+                rgba(116,76,255,0.15),
+
+                inset 0 1px
+                rgba(255,255,255,0.16);
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+
+        .nav-button:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+
+                0 0 35px
+                rgba(116,76,255,0.30);
+        }
+
+
+        /* =========================================================
+           MOBILE MENU BUTTON
+        ========================================================= */
+
+        .mobile-menu {
+
+            display: none;
+
+            width: 42px;
+            height: 42px;
+
+            flex-shrink: 0;
+
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            color: white;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           SECTION POSITIONING
+           
+           IMPORTANT:
+           Every section has scroll-margin-top so navigation
+           stops correctly below the sticky navbar.
+        ========================================================= */
+
+        section {
+
+            position: relative;
+
+            scroll-margin-top: 110px;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+
+            min-height: 780px;
+
+            padding:
+                105px 75px 100px;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                minmax(420px, 0.95fr);
+
+            align-items: center;
+
+            gap: 30px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 760px;
+            height: 760px;
+
+            right: -270px;
+            top: 30px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(118,76,255,0.19),
+                    transparent 64%
+                );
+
+            filter: blur(25px);
+
+            pointer-events: none;
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 700px;
+        }
+
+
+        /* =========================================================
+           EYEBROW
+        ========================================================= */
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding:
+                8px 13px;
+
+            margin-bottom: 25px;
+
+            border:
+                1px solid
+                rgba(150,130,255,0.22);
+
+            border-radius: 999px;
+
+            background:
+                rgba(118,75,255,0.055);
+
+            color: #c0b7e9;
+
+            font-size: 11px;
+
+            font-weight: 500;
+
+            letter-spacing:
+                .08em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .eyebrow-dot {
+
+            width: 7px;
+            height: 7px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background:
+                #9c7cff;
+
+            box-shadow:
+                0 0 14px #8c68ff;
+        }
+
+
+        /* =========================================================
+           HERO TITLE
+        ========================================================= */
+
+        .hero h1 {
+
+            max-width: 760px;
+
+            margin-bottom: 27px;
+
+            font-size:
+                clamp(48px, 5.1vw, 76px);
+
+            line-height:
+                1.035;
+
+            letter-spacing:
+                -.055em;
+
+            font-weight: 700;
+        }
+
+
+        .hero h1 span {
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    #ffffff 10%,
+                    #bca9ff 48%,
+                    #7ebdff 90%
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color: transparent;
+        }
+
+
+        .hero-description {
+
+            max-width: 620px;
+
+            margin-bottom: 31px;
+
+            color: var(--muted);
+
+            font-size: 15px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .hero-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 23px;
+        }
+
+
+        .primary-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding:
+                0 24px;
+
+            border:
+                1px solid
+                rgba(185,157,255,0.48);
+
+            border-radius: 11px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(123,77,255,0.76),
+                    rgba(82,57,173,0.58)
+                );
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            box-shadow:
+
+                0 0 35px
+                rgba(117,77,255,0.20),
+
+                inset 0 1px
+                rgba(255,255,255,0.20);
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+
+        .primary-btn:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+
+                0 0 50px
+                rgba(117,77,255,0.35),
+
+                inset 0 1px
+                rgba(255,255,255,0.22);
+        }
+
+
+        .text-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            color: #d7d4df;
+
+            font-size: 13px;
+
+            transition:
+                color .25s ease;
+        }
+
+
+        .text-btn span {
+
+            transition:
+                transform .25s ease;
+        }
+
+
+        .text-btn:hover {
+
+            color: white;
+        }
+
+
+        .text-btn:hover span {
+
+            transform:
+                translateX(4px);
+        }
+
+
+        /* =========================================================
+           HERO ORBITAL VISUAL
+        ========================================================= */
+
+        .hero-visual {
+
+            min-height: 620px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        .orbital-system {
+
+            width:
+                min(590px, 100%);
+
+            aspect-ratio: 1 / 1;
+
+            position: relative;
+
+            transform:
+                translateX(25px);
+        }
+
+
+        .orbit {
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(177,157,255,0.48);
+
+            box-shadow:
+                0 0 20px
+                rgba(116,81,255,0.08);
+        }
+
+
+        .orbit-one {
+
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .orbit-two {
+
+            width: 80%;
+            height: 80%;
+        }
+
+
+        .orbit-three {
+
+            width: 60%;
+            height: 60%;
+        }
+
+
+        .orbit-four {
+
+            width: 41%;
+            height: 41%;
+        }
+
+
+        .orbit::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background:
+                #aa8cff;
+
+            box-shadow:
+
+                0 0 15px #9470ff,
+                0 0 35px
+                rgba(145,109,255,0.8);
+        }
+
+
+        .orbit-one::after {
+
+            top: 13%;
+            right: 9%;
+        }
+
+
+        .orbit-two::after {
+
+            bottom: 15%;
+            left: 6%;
+        }
+
+
+        .orbit-three::after {
+
+            top: 5%;
+            left: 22%;
+        }
+
+
+        .orbital-system::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 12%;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle at 40% 35%,
+                    rgba(151,110,255,0.28),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 70% 75%,
+                    rgba(61,168,255,0.23),
+                    transparent 30%
+                ),
+
+                rgba(25,19,49,0.78);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+
+            box-shadow:
+
+                inset 0 0 70px
+                rgba(115,77,255,0.18),
+
+                0 0 90px
+                rgba(111,72,255,0.16);
+        }
+
+
+        .orbital-core {
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width: 28%;
+
+            aspect-ratio: 1 / 1;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.24);
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 110%,
+                    rgba(108,225,255,0.95),
+                    rgba(207,106,255,0.48) 23%,
+                    rgba(24,19,43,0.94) 58%
+                );
+
+            box-shadow:
+
+                0 0 60px
+                rgba(136,85,255,0.28),
+
+                inset 0 0 45px
+                rgba(255,255,255,0.08);
+        }
+
+
+        .orbital-core::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background-image:
+
+                radial-gradient(
+                    rgba(255,255,255,0.55) 1px,
+                    transparent 1px
+                );
+
+            background-size: 13px 13px;
+
+            opacity: .22;
+        }
+
+
+        .core-text {
+
+            position: relative;
+
+            z-index: 2;
+
+            color: white;
+
+            font-size:
+                clamp(11px, 1.35vw, 16px);
+
+            font-weight: 500;
+
+            line-height: 1.4;
+
+            text-shadow:
+                0 2px 15px
+                rgba(0,0,0,0.5);
+        }
+
+
+        /* =========================================================
+           COMMON SECTION
+        ========================================================= */
+
+        .content-section {
+
+            padding:
+                var(--section-padding)
+                75px;
+        }
+
+
+        .section-heading {
+
+            max-width: 780px;
+
+            margin-bottom: 52px;
+        }
+
+
+        .section-label {
+
+            margin-bottom: 13px;
+
+            color:
+                #9f85ff;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing:
+                .15em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .section-heading h2 {
+
+            margin-bottom: 17px;
+
+            font-size:
+                clamp(35px, 4vw, 54px);
+
+            line-height:
+                1.08;
+
+            letter-spacing:
+                -.045em;
+        }
+
+
+        .section-heading p {
+
+            max-width: 690px;
+
+            color:
+                var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =========================================================
+           GLASS CARD
+        ========================================================= */
+
+        .glass-card {
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.065),
+                    rgba(255,255,255,0.022)
+                );
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            box-shadow:
+
+                0 25px 80px
+                rgba(0,0,0,0.20),
+
+                inset 0 1px
+                rgba(255,255,255,0.05);
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.15fr)
+                minmax(280px, .85fr);
+
+            gap: 22px;
+        }
+
+
+        .about-main {
+
+            min-height: 390px;
+
+            padding: 42px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .about-main::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            right: -130px;
+            bottom: -140px;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(123,79,255,0.24),
+                    transparent 68%
+                );
+
+            filter: blur(15px);
+        }
+
+
+        .about-main h3 {
+
+            max-width: 650px;
+
+            margin-bottom: 20px;
+
+            font-size: 29px;
+
+            line-height: 1.25;
+
+            letter-spacing:
+                -.025em;
+        }
+
+
+        .about-main > p {
+
+            max-width: 700px;
+
+            color:
+                var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        .about-points {
+
+            margin-top: 32px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0,1fr));
+
+            gap: 13px;
+        }
+
+
+        .about-point {
+
+            padding: 17px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.032);
+
+            color:
+                #c8c5d0;
+
+            font-size: 12px;
+        }
+
+
+        .about-point strong {
+
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: white;
+
+            font-size: 13px;
+        }
+
+
+        .about-side {
+
+            display: grid;
+
+            grid-template-rows:
+                repeat(2, minmax(0,1fr));
+
+            gap: 22px;
+        }
+
+
+        .stat-card {
+
+            min-height: 184px;
+
+            padding: 30px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        .stat-number {
+
+            margin-bottom: 3px;
+
+            font-size: 43px;
+
+            font-weight: 700;
+
+            line-height: 1;
+
+            letter-spacing:
+                -.05em;
+
+            background:
+
+                linear-gradient(
+                    120deg,
+                    white,
+                    #a88aff
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color: transparent;
+        }
+
+
+        .stat-label {
+
+            color:
+                var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           SERVICES
+        ========================================================= */
+
+        .services-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0,1fr));
+
+            gap: 17px;
+        }
+
+
+        .service-card {
+
+            min-height: 260px;
+
+            padding: 29px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                background .3s ease;
+        }
+
+
+        .service-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(155,125,255,0.34);
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(123,80,255,0.09),
+                    rgba(255,255,255,0.035)
+                );
+        }
+
+
+        .service-number {
+
+            position: absolute;
+
+            top: 21px;
+            right: 23px;
+
+            color:
+                rgba(255,255,255,0.12);
+
+            font-size: 11px;
+        }
+
+
+        .service-icon {
+
+            width: 49px;
+            height: 49px;
+
+            margin-bottom: 26px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid
+                rgba(163,133,255,0.22);
+
+            border-radius: 14px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(125,80,255,0.18),
+                    rgba(65,146,255,0.08)
+                );
+
+            color:
+                #c2aeff;
+
+            font-size: 20px;
+        }
+
+
+        .service-card h3 {
+
+            margin-bottom: 10px;
+
+            font-size: 17px;
+
+            line-height: 1.3;
+        }
+
+
+        .service-card p {
+
+            color:
+                var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.75;
+        }
+
+
+        /* =========================================================
+           PRODUCTS
+        ========================================================= */
+
+        .products-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0,1fr));
+
+            gap: 17px;
+        }
+
+
+        .product-card {
+
+            min-height: 235px;
+
+            padding: 29px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease;
+        }
+
+
+        .product-card:hover {
+
+            transform:
+                translateY(-6px);
+
+            border-color:
+                rgba(145,117,255,0.32);
+        }
+
+
+        .product-card.featured {
+
+            grid-column:
+                span 2;
+
+            min-height: 310px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    rgba(112,73,255,0.13),
+                    rgba(255,255,255,0.035)
+                );
+        }
+
+
+        .product-tag {
+
+            display: inline-flex;
+
+            padding:
+                6px 10px;
+
+            margin-bottom: 21px;
+
+            border:
+                1px solid
+                rgba(157,129,255,0.22);
+
+            border-radius: 999px;
+
+            background:
+                rgba(128,87,255,0.07);
+
+            color:
+                #c7baff;
+
+            font-size: 9px;
+
+            letter-spacing:
+                .1em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .product-card h3 {
+
+            margin-bottom: 10px;
+
+            font-size: 20px;
+
+            line-height: 1.3;
+        }
+
+
+        .product-card p {
+
+            max-width: 500px;
+
+            color:
+                var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.75;
+        }
+
+
+        .product-arrow {
+
+            position: absolute;
+
+            right: 26px;
+            bottom: 25px;
+
+            width: 37px;
+            height: 37px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            color:
+                #ddd;
+
+            transition:
+                transform .25s ease,
+                background .25s ease;
+        }
+
+
+        .product-card:hover .product-arrow {
+
+            transform:
+                translate(3px,-3px);
+
+            background:
+                rgba(128,87,255,0.18);
+        }
+
+
+        /* =========================================================
+           ACCOUNTIFY ERP
+        ========================================================= */
+
+        .accountify-section {
+
+            padding:
+                var(--section-padding)
+                75px;
+
+            overflow: hidden;
+        }
+
+
+        .accountify-wrapper {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(300px,.85fr)
+                minmax(0,1.15fr);
+
+            gap: 40px;
+
+            align-items: center;
+        }
+
+
+        .accountify-content h2 {
+
+            margin-bottom: 20px;
+
+            font-size:
+                clamp(38px, 4vw, 57px);
+
+            line-height: 1.06;
+
+            letter-spacing:
+                -.05em;
+        }
+
+
+        .accountify-content h2 span {
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    #a98aff,
+                    #68c6ff
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color: transparent;
+        }
+
+
+        .accountify-content > p {
+
+            max-width: 570px;
+
+            margin-bottom: 27px;
+
+            color:
+                var(--muted);
+
+            font-size: 14px;
+
+            line-height: 1.85;
+        }
+
+
+        .accountify-list {
+
+            list-style: none;
+
+            display: grid;
+
+            gap: 10px;
+
+            margin-bottom: 29px;
+        }
+
+
+        .accountify-list li {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color:
+                #ccc9d4;
+
+            font-size: 12px;
+        }
+
+
+        .accountify-list li::before {
+
+            content: "✓";
+
+            width: 20px;
+            height: 20px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(124,84,255,0.15);
+
+            color:
+                #b49bff;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           ERP WINDOW
+        ========================================================= */
+
+        .erp-window {
+
+            width: 100%;
+
+            padding: 9px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.13);
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            box-shadow:
+
+                0 35px 100px
+                rgba(0,0,0,0.42),
+
+                0 0 80px
+                rgba(112,75,255,0.12);
+
+            transform:
+                perspective(1200px)
+                rotateY(-4deg)
+                rotateX(2deg);
+
+            transition:
+                transform .5s ease;
+        }
+
+
+        .erp-window:hover {
+
+            transform:
+                perspective(1200px)
+                rotateY(0)
+                rotateX(0);
+        }
+
+
+        .erp-inner {
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 16px;
+
+            background:
+                #0b0a12;
+        }
+
+
+        .erp-topbar {
+
+            height: 46px;
+
+            padding:
+                0 15px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+
+        .window-dots {
+
+            display: flex;
+
+            gap: 6px;
+        }
+
+
+        .window-dots i {
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.2);
+        }
+
+
+        .erp-title {
+
+            color:
+                #aaa;
+
+            font-size: 9px;
+        }
+
+
+        .erp-body {
+
+            display: grid;
+
+            grid-template-columns:
+                115px minmax(0,1fr);
+
+            min-height: 390px;
+        }
+
+
+        .erp-sidebar {
+
+            padding:
+                18px 10px;
+
+            border-right:
+                1px solid
+                rgba(255,255,255,0.06);
+
+            background:
+                rgba(255,255,255,0.018);
+        }
+
+
+        .erp-logo-small {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding: 5px;
+
+            margin-bottom: 20px;
+
+            color: white;
+
+            font-size: 9px;
+
+            font-weight: 600;
+        }
+
+
+        .erp-logo-small img {
+
+            width: 20px;
+            height: 20px;
+
+            object-fit: contain;
+        }
+
+
+        .erp-menu {
+
+            display: grid;
+
+            gap: 4px;
+        }
+
+
+        .erp-menu div {
+
+            padding:
+                7px 8px;
+
+            border-radius: 6px;
+
+            color:
+                #777584;
+
+            font-size: 7px;
+        }
+
+
+        .erp-menu div:first-child {
+
+            color: white;
+
+            background:
+                rgba(126,82,255,0.15);
+        }
+
+
+        .erp-dashboard {
+
+            min-width: 0;
+
+            padding: 20px;
+        }
+
+
+        .erp-dashboard-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .erp-dashboard-header h4 {
+
+            font-size: 16px;
+        }
+
+
+        .erp-date {
+
+            color:
+                #6f6c79;
+
+            font-size: 7px;
+        }
+
+
+        .erp-stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,minmax(0,1fr));
+
+            gap: 8px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .erp-stat {
+
+            min-width: 0;
+
+            padding: 12px;
+
+            overflow: hidden;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 9px;
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+
+        .erp-stat span {
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            color:
+                #777584;
+
+            font-size: 7px;
+        }
+
+
+        .erp-stat strong {
+
+            font-size: 13px;
+
+            white-space: nowrap;
+        }
+
+
+        .erp-chart {
+
+            height: 145px;
+
+            margin-bottom: 10px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 15px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,0.012);
+        }
+
+
+        .chart-lines {
+
+            position: absolute;
+
+            inset: 15px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
+
+        .chart-lines span {
+
+            height: 1px;
+
+            background:
+                rgba(255,255,255,0.045);
+        }
+
+
+        .chart-wave {
+
+            position: absolute;
+
+            left: 15px;
+            right: 15px;
+            bottom: 26px;
+
+            height: 75px;
+
+            border-bottom:
+                2px solid
+                rgba(142,108,255,0.9);
+
+            border-radius:
+                50% 50% 0 0;
+
+            transform:
+                skewY(-8deg);
+        }
+
+
+        .erp-bottom {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,minmax(0,1fr));
+
+            gap: 10px;
+        }
+
+
+        .erp-bottom-card {
+
+            min-height: 70px;
+
+            padding: 12px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            border-radius: 9px;
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+
+        .erp-bottom-card span {
+
+            color:
+                #73707d;
+
+            font-size: 7px;
+        }
+
+
+        .erp-bottom-card strong {
+
+            display: block;
+
+            margin-top: 6px;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-section {
+
+            padding:
+                80px 75px 110px;
+        }
+
+
+        .contact-box {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding:
+                75px 55px;
+
+            text-align: center;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(124,80,255,0.16),
+                    transparent 50%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.065),
+                    rgba(255,255,255,0.025)
+                );
+        }
+
+
+        .contact-box::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            left: 50%;
+            top: 60%;
+
+            transform:
+                translate(-50%,-50%);
+
+            border:
+                1px solid
+                rgba(153,128,255,0.12);
+
+            border-radius: 50%;
+
+            box-shadow:
+
+                0 0 0 60px
+                rgba(145,115,255,0.025),
+
+                0 0 0 120px
+                rgba(145,115,255,0.015);
+        }
+
+
+        .contact-box > * {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .contact-box h2 {
+
+            margin-bottom: 18px;
+
+            font-size:
+                clamp(39px, 5vw, 64px);
+
+            line-height:
+                1.05;
+
+            letter-spacing:
+                -.05em;
+        }
+
+
+        .contact-box h2 span {
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    #b092ff,
+                    #68c6ff
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color: transparent;
+        }
+
+
+        .contact-box p {
+
+            max-width: 620px;
+
+            margin:
+                0 auto 30px;
+
+            color:
+                var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        .contact-actions {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 20px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            min-height: 90px;
+
+            padding:
+                30px 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            background:
+                rgba(0,0,0,0.12);
+        }
+
+
+        .footer-logo {
+
+            line-height: 0;
+
+            flex-shrink: 0;
+        }
+
+
+        .footer-logo img {
+
+            display: block;
+
+            width: 155px;
+        }
+
+
+        .footer-copy {
+
+            color:
+                #686572;
+
+            font-size: 10px;
+
+            text-align: center;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 19px;
+        }
+
+
+        .footer-links a {
+
+            color:
+                #85818f;
+
+            font-size: 10px;
+
+            transition:
+                color .2s ease;
+        }
+
+
+        .footer-links a:hover {
+
+            color: white;
+        }
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(22px);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
+        }
+
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================================================
+           LARGE LAPTOPS
+           1200px
+        ========================================================= */
+
+        @media (max-width: 1200px) {
+
+            .site-frame {
+
+                width: 95%;
+
+                margin-top: 22px;
+            }
+
+
+            .navbar {
+
+                width: 94%;
+            }
+
+
+            .nav-links a {
+
+                padding:
+                    9px 9px;
+
+                font-size: 12px;
+            }
+
+
+            .nav-button {
+
+                padding:
+                    0 15px;
+            }
+
+
+            .hero {
+
+                grid-template-columns:
+                    minmax(0,1fr)
+                    minmax(380px,.9fr);
+
+                padding-left: 55px;
+                padding-right: 55px;
+            }
+
+
+            .content-section,
+            .accountify-section {
+
+                padding-left: 55px;
+                padding-right: 55px;
+            }
+
+
+            .contact-section {
+
+                padding-left: 55px;
+                padding-right: 55px;
+            }
+
+
+            .services-grid {
+
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+            }
+
+
+            .products-grid {
+
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+            }
+
+
+            .product-card.featured {
+
+                grid-column:
+                    span 2;
+            }
+        }
+
+
+        /* =========================================================
+           TABLETS / SMALL LAPTOPS
+           1000px
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            :root {
+
+                --section-padding: 100px;
+            }
+
+
+            .navbar {
+
+                top: 10px;
+            }
+
+
+            .nav-links {
+
+                gap: 0;
+            }
+
+
+            .nav-links a {
+
+                padding:
+                    9px 7px;
+
+                font-size: 11px;
+            }
+
+
+            .logo img {
+
+                width: 145px;
+            }
+
+
+            .nav-button {
+
+                min-height: 38px;
+
+                padding:
+                    0 13px;
+
+                font-size: 11px;
+            }
+
+
+            .hero {
+
+                min-height: auto;
+
+                grid-template-columns:
+                    1fr;
+
+                padding:
+                    95px 50px 60px;
+
+                gap: 15px;
+            }
+
+
+            .hero-content {
+
+                max-width: 800px;
+            }
+
+
+            .hero h1 {
+
+                max-width: 800px;
+
+                font-size:
+                    clamp(48px, 7vw, 68px);
+            }
+
+
+            .hero-visual {
+
+                min-height: 500px;
+
+                margin-top: 0;
+            }
+
+
+            .orbital-system {
+
+                width:
+                    min(500px, 80vw);
+
+                transform: none;
+            }
+
+
+            .about-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .about-side {
+
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+
+                grid-template-rows:
+                    1fr;
+            }
+
+
+            .accountify-wrapper {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 55px;
+            }
+
+
+            .accountify-content {
+
+                max-width: 760px;
+            }
+
+
+            .erp-window {
+
+                max-width: 850px;
+
+                margin:
+                    0 auto;
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE NAVIGATION
+           820px
+        ========================================================= */
+
+        @media (max-width: 820px) {
+
+            .navbar {
+
+                min-height: 62px;
+
+                padding:
+                    9px 12px;
+            }
+
+
+            .nav-links,
+            .nav-button {
+
+                display: none;
+            }
+
+
+            .mobile-menu {
+
+                display: flex;
+            }
+
+
+            .navbar.mobile-open {
+
+                align-items: flex-start;
+            }
+
+
+            .navbar.mobile-open .nav-links {
+
+                position: absolute;
+
+                top:
+                    calc(100% + 9px);
+
+                left: 0;
+                right: 0;
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: stretch;
+
+                gap: 2px;
+
+                padding: 9px;
+
+                border:
+                    1px solid var(--border);
+
+                border-radius: 17px;
+
+                background:
+                    rgba(9,8,16,0.94);
+
+                backdrop-filter:
+                    blur(25px);
+
+                -webkit-backdrop-filter:
+                    blur(25px);
+
+                box-shadow:
+                    0 25px 70px
+                    rgba(0,0,0,0.48);
+            }
+
+
+            .navbar.mobile-open .nav-links a {
+
+                padding:
+                    13px 14px;
+
+                font-size: 13px;
+            }
+
+
+            .navbar.mobile-open .nav-links a.active::after {
+
+                left: auto;
+
+                right: 14px;
+
+                bottom: 50%;
+
+                transform:
+                    translateY(50%);
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+           650px
+        ========================================================= */
+
+        @media (max-width: 650px) {
+
+            :root {
+
+                --section-padding: 82px;
+            }
+
+
+            html {
+
+                scroll-padding-top: 90px;
+            }
+
+
+            body {
+
+                background:
+
+                    radial-gradient(
+                        circle at 5% 5%,
+                        rgba(111,72,255,0.12),
+                        transparent 32%
+                    ),
+
+                    linear-gradient(
+                        135deg,
+                        #08070e,
+                        #0d0b16
+                    );
+            }
+
+
+            .background-glow {
+
+                width: 320px;
+                height: 320px;
+
+                filter:
+                    blur(90px);
+            }
+
+
+            .site-frame {
+
+                width: 97%;
+
+                margin:
+                    9px auto;
+
+                border-radius: 17px;
+            }
+
+
+            .navbar {
+
+                width: 94%;
+
+                top: 7px;
+
+                margin-top: 9px;
+
+                border-radius: 15px;
+            }
+
+
+            .logo img {
+
+                width: 137px;
+            }
+
+
+            section {
+
+                scroll-margin-top:
+                    88px;
+            }
+
+
+            .hero {
+
+                padding:
+                    82px 23px 50px;
+            }
+
+
+            .eyebrow {
+
+                max-width: 100%;
+
+                font-size: 9px;
+
+                letter-spacing:
+                    .06em;
+            }
+
+
+            .hero h1 {
+
+                margin-bottom: 21px;
+
+                font-size:
+                    clamp(40px, 11vw, 58px);
+
+                line-height:
+                    1.045;
+            }
+
+
+            .hero-description {
+
+                margin-bottom: 27px;
+
+                font-size: 13px;
+
+                line-height: 1.8;
+            }
+
+
+            .hero-actions {
+
+                align-items:
+                    stretch;
+
+                flex-direction:
+                    column;
+
+                gap: 13px;
+            }
+
+
+            .primary-btn {
+
+                width: 100%;
+
+                min-height: 48px;
+            }
+
+
+            .text-btn {
+
+                justify-content:
+                    center;
+
+                padding:
+                    7px 0;
+            }
+
+
+            .hero-visual {
+
+                min-height:
+                    350px;
+
+                margin-top:
+                    15px;
+            }
+
+
+            .orbital-system {
+
+                width:
+                    min(390px, 95vw);
+            }
+
+
+            .content-section,
+            .accountify-section {
+
+                padding:
+                    var(--section-padding)
+                    23px;
+            }
+
+
+            .section-heading {
+
+                margin-bottom:
+                    38px;
+            }
+
+
+            .section-label {
+
+                font-size:
+                    10px;
+            }
+
+
+            .section-heading h2 {
+
+                font-size:
+                    clamp(32px, 9vw, 42px);
+            }
+
+
+            .section-heading p {
+
+                font-size:
+                    13px;
+            }
+
+
+            .about-main {
+
+                min-height:
+                    auto;
+
+                padding:
+                    28px 24px;
+            }
+
+
+            .about-main h3 {
+
+                font-size:
+                    24px;
+            }
+
+
+            .about-main > p {
+
+                font-size:
+                    13px;
+            }
+
+
+            .about-points {
+
+                grid-template-columns:
+                    1fr;
+
+                margin-top:
+                    25px;
+            }
+
+
+            .about-side {
+
+                grid-template-columns:
+                    1fr;
+
+                grid-template-rows:
+                    repeat(2,minmax(130px,1fr));
+
+                gap: 15px;
+            }
+
+
+            .stat-card {
+
+                min-height:
+                    145px;
+
+                padding:
+                    25px;
+            }
+
+
+            .services-grid,
+            .products-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    14px;
+            }
+
+
+            .product-card.featured {
+
+                grid-column:
+                    span 1;
+
+                min-height:
+                    270px;
+            }
+
+
+            .service-card {
+
+                min-height:
+                    215px;
+
+                padding:
+                    26px;
+            }
+
+
+            .product-card {
+
+                min-height:
+                    210px;
+
+                padding:
+                    26px;
+            }
+
+
+            .accountify-content h2 {
+
+                font-size:
+                    clamp(38px, 11vw, 48px);
+            }
+
+
+            .accountify-content > p {
+
+                font-size:
+                    13px;
+            }
+
+
+            .erp-window {
+
+                padding:
+                    6px;
+
+                border-radius:
+                    17px;
+
+                transform:
+                    none;
+            }
+
+
+            .erp-window:hover {
+
+                transform:
+                    none;
+            }
+
+
+            .erp-topbar {
+
+                height:
+                    40px;
+
+                padding:
+                    0 11px;
+            }
+
+
+            .erp-body {
+
+                grid-template-columns:
+                    78px minmax(0,1fr);
+
+                min-height:
+                    300px;
+            }
+
+
+            .erp-sidebar {
+
+                padding:
+                    13px 7px;
+            }
+
+
+            .erp-dashboard {
+
+                padding:
+                    12px;
+            }
+
+
+            .erp-dashboard-header {
+
+                margin-bottom:
+                    12px;
+            }
+
+
+            .erp-dashboard-header h4 {
+
+                font-size:
+                    13px;
+            }
+
+
+            .erp-stats {
+
+                grid-template-columns:
+                    repeat(2,minmax(0,1fr));
+            }
+
+
+            .erp-stat {
+
+                padding:
+                    9px;
+            }
+
+
+            .erp-stat:last-child {
+
+                display:
+                    none;
+            }
+
+
+            .erp-chart {
+
+                height:
+                    115px;
+
+                padding:
+                    10px;
+            }
+
+
+            .chart-lines {
+
+                inset:
+                    10px;
+            }
+
+
+            .chart-wave {
+
+                left:
+                    10px;
+
+                right:
+                    10px;
+
+                bottom:
+                    20px;
+            }
+
+
+            .contact-section {
+
+                padding:
+                    55px 23px 80px;
+            }
+
+
+            .contact-box {
+
+                padding:
+                    58px 23px;
+            }
+
+
+            .contact-box h2 {
+
+                font-size:
+                    clamp(36px, 10vw, 48px);
+            }
+
+
+            .contact-box p {
+
+                font-size:
+                    13px;
+            }
+
+
+            .contact-actions {
+
+                flex-direction:
+                    column;
+            }
+
+
+            .contact-actions .text-btn {
+
+                justify-content:
+                    center;
+            }
+
+
+            footer {
+
+                padding:
+                    28px 22px;
+
+                flex-direction:
+                    column;
+
+                text-align:
+                    center;
+            }
+
+
+            .footer-logo img {
+
+                width:
+                    140px;
+            }
+
+
+            .footer-links {
+
+                justify-content:
+                    center;
+
+                flex-wrap:
+                    wrap;
+
+                gap:
+                    13px 18px;
+            }
+        }
+
+
+        /* =========================================================
+           SMALL PHONES
+           480px
+        ========================================================= */
+
+        @media (max-width: 480px) {
+
+            .site-frame {
+
+                width:
+                    calc(100% - 10px);
+
+                margin:
+                    5px auto;
+
+                border-radius:
+                    15px;
+            }
+
+
+            .navbar {
+
+                width:
+                    calc(100% - 22px);
+
+                min-height:
+                    59px;
+
+                padding:
+                    8px 10px;
+            }
+
+
+            .logo img {
+
+                width:
+                    124px;
+            }
+
+
+            .mobile-menu {
+
+                width:
+                    39px;
+
+                height:
+                    39px;
+
+                font-size:
+                    18px;
+            }
+
+
+            .hero {
+
+                padding:
+                    78px 19px 40px;
+            }
+
+
+            .eyebrow {
+
+                padding:
+                    7px 10px;
+
+                font-size:
+                    8px;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    clamp(38px, 11.5vw, 48px);
+            }
+
+
+            .hero-description {
+
+                font-size:
+                    12px;
+            }
+
+
+            .hero-visual {
+
+                min-height:
+                    300px;
+            }
+
+
+            .orbital-system {
+
+                width:
+                    100%;
+            }
+
+
+            .content-section,
+            .accountify-section {
+
+                padding-left:
+                    19px;
+
+                padding-right:
+                    19px;
+            }
+
+
+            .section-heading h2 {
+
+                font-size:
+                    33px;
+            }
+
+
+            .about-main {
+
+                padding:
+                    25px 20px;
+            }
+
+
+            .about-main h3 {
+
+                font-size:
+                    22px;
+            }
+
+
+            .service-card,
+            .product-card {
+
+                padding:
+                    24px;
+
+                min-height:
+                    205px;
+            }
+
+
+            .product-card.featured {
+
+                min-height:
+                    255px;
+            }
+
+
+            .accountify-content h2 {
+
+                font-size:
+                    38px;
+            }
+
+
+            .erp-body {
+
+                display:
+                    block;
+
+                min-height:
+                    auto;
+            }
+
+
+            .erp-sidebar {
+
+                display:
+                    none;
+            }
+
+
+            .erp-dashboard {
+
+                padding:
+                    11px;
+            }
+
+
+            .erp-stats {
+
+                gap:
+                    6px;
+            }
+
+
+            .erp-stat strong {
+
+                font-size:
+                    11px;
+            }
+
+
+            .erp-chart {
+
+                height:
+                    105px;
+            }
+
+
+            .erp-bottom-card {
+
+                min-height:
+                    60px;
+
+                padding:
+                    9px;
+            }
+
+
+            .contact-section {
+
+                padding-left:
+                    19px;
+
+                padding-right:
+                    19px;
+            }
+
+
+            .contact-box {
+
+                padding:
+                    50px 18px;
+            }
+
+
+            .contact-box h2 {
+
+                font-size:
+                    37px;
+            }
+
+
+            footer {
+
+                padding:
+                    27px 18px;
+            }
+        }
+
+
+        /* =========================================================
+           VERY SMALL PHONES
+           360px
+        ========================================================= */
+
+        @media (max-width: 360px) {
+
+            .logo img {
+
+                width:
+                    112px;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    36px;
+            }
+
+
+            .hero-description {
+
+                font-size:
+                    11.5px;
+            }
+
+
+            .hero-visual {
+
+                min-height:
+                    275px;
+            }
+
+
+            .section-heading h2 {
+
+                font-size:
+                    30px;
+            }
+
+
+            .service-card,
+            .product-card {
+
+                padding:
+                    21px;
+            }
+
+
+            .accountify-content h2 {
+
+                font-size:
+                    35px;
+            }
+
+
+            .contact-box h2 {
+
+                font-size:
+                    34px;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCE MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+
+                scroll-behavior:
+                    auto;
+            }
+
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+            }
+
+
+            .reveal {
+
+                opacity:
+                    1;
+
+                transform:
+                    none;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================================
+         BACKGROUND
+    ========================================================== -->
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- =========================================================
+         MAIN WEBSITE
+    ========================================================== -->
+
+    <div class="site-frame">
+
+
+        <!-- =====================================================
+             NAVIGATION
+        ====================================================== -->
+
+        <header class="navbar" id="navbar">
+
+
+            <a href="#home"
+               class="logo"
+               aria-label="Axion Digital Systems">
+
+                <img src="images/light_logo.png"
+                     alt="Axion Digital Systems">
+
+            </a>
+
+
+            <nav class="nav-links"
+                 aria-label="Main navigation">
+
+
+                <a href="#home"
+                   class="active">
+
+                    Home
+
+                </a>
+
+
+                <a href="#about">
+
+                    About
+
+                </a>
+
+
+                <a href="#services">
+
+                    Services
+
+                </a>
+
+
+                <a href="#products">
+
+                    Products
+
+                </a>
+
+
+                <a href="#accountify">
+
+                    AccountifyERP
+
+                </a>
+
+
+                <a href="#contact">
+
+                    Contact
+
+                </a>
+
+
+            </nav>
+
+
+            <a href="#contact"
+               class="nav-button">
+
+                Get Started
+
+            </a>
+
+
+            <button class="mobile-menu"
+                    id="mobileMenu"
+                    type="button"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+
+                ☰
+
+            </button>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             PAGE CONTENT
+        ====================================================== -->
+
+        <main>
+
+
+            <!-- =================================================
+                 HOME
+            ================================================== -->
+
+            <section class="hero"
+                     id="home">
+
+
+                <div class="hero-content reveal">
+
+
+                    <div class="eyebrow">
+
+                        <span class="eyebrow-dot"></span>
+
+                        Digital Technology & Business Solutions
+
+                    </div>
+
+
+                    <h1>
+
+                        Technology That
+
+                        <span>
+                            Moves Business Forward.
+                        </span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        Axion Digital Systems builds modern digital
+                        solutions that help businesses work smarter,
+                        operate efficiently and grow with confidence.
+
+                        From powerful ERP software to IT services,
+                        software solutions and technology products —
+                        everything you need, connected in one ecosystem.
+
+                    </p>
+
+
+                    <div class="hero-actions">
+
+
+                        <a href="#accountify"
+                           class="primary-btn">
+
+                            Explore AccountifyERP
+
+                        </a>
+
+
+                        <a href="#services"
+                           class="text-btn">
+
+                            Explore our services
+
+                            <span>
+                                →
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     ORBITAL VISUAL
+                ================================================== -->
+
+                <div class="hero-visual reveal">
+
+
+                    <div class="orbital-system">
+
+
+                        <div class="orbit orbit-one"></div>
+
+                        <div class="orbit orbit-two"></div>
+
+                        <div class="orbit orbit-three"></div>
+
+                        <div class="orbit orbit-four"></div>
+
+
+                        <div class="orbital-core">
+
+                            <div class="core-text">
+
+                                AXION<br>
+                                DIGITAL<br>
+                                SYSTEMS
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ABOUT
+            ================================================== -->
+
+            <section class="content-section"
+                     id="about">
+
+
+                <div class="section-heading reveal">
+
+
+                    <div class="section-label">
+
+                        About Axion
+
+                    </div>
+
+
+                    <h2>
+
+                        Building technology
+                        around real business needs.
+
+                    </h2>
+
+
+                    <p>
+
+                        Axion Digital Systems combines software,
+                        hardware and IT expertise to deliver practical
+                        technology solutions for modern businesses.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="about-grid">
+
+
+                    <div class="about-main glass-card reveal">
+
+
+                        <h3>
+
+                            Technology should simplify business —
+                            not make it more complicated.
+
+                        </h3>
+
+
+                        <p>
+
+                            We focus on creating reliable, accessible
+                            and modern technology solutions that solve
+                            everyday business problems. Our approach
+                            combines software development, ERP systems,
+                            IT solutions and technical services under
+                            one technology-focused brand.
+
+                        </p>
+
+
+                        <div class="about-points">
+
+
+                            <div class="about-point">
+
+                                <strong>
+                                    Business Focused
+                                </strong>
+
+                                Solutions designed around practical
+                                business workflows.
+
+                            </div>
+
+
+                            <div class="about-point">
+
+                                <strong>
+                                    Modern Technology
+                                </strong>
+
+                                Clean, scalable and contemporary
+                                digital solutions.
+
+                            </div>
+
+
+                            <div class="about-point">
+
+                                <strong>
+                                    Reliable Support
+                                </strong>
+
+                                Technology backed by practical
+                                technical assistance.
+
+                            </div>
+
+
+                            <div class="about-point">
+
+                                <strong>
+                                    One Ecosystem
+                                </strong>
+
+                                Software, hardware and IT services
+                                in one place.
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="about-side">
+
+
+                        <div class="stat-card glass-card reveal">
+
+                            <div class="stat-number">
+                                ERP
+                            </div>
+
+                            <div class="stat-label">
+                                Business Management Solutions
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card glass-card reveal">
+
+                            <div class="stat-number">
+                                IT
+                            </div>
+
+                            <div class="stat-label">
+                                Technology & Technical Services
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SERVICES
+            ================================================== -->
+
+            <section class="content-section"
+                     id="services">
+
+
+                <div class="section-heading reveal">
+
+
+                    <div class="section-label">
+
+                        Our Services
+
+                    </div>
+
+
+                    <h2>
+
+                        Technology services
+                        built for progress.
+
+                    </h2>
+
+
+                    <p>
+
+                        From software and websites to complete IT
+                        setup and computer services, Axion provides
+                        technology solutions for individuals and
+                        businesses.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="services-grid">
+
+
+                    <article class="service-card glass-card reveal">
+
+
+                        <span class="service-number">
+                            01
+                        </span>
+
+
+                        <div class="service-icon">
+                            ◈
+                        </div>
+
+
+                        <h3>
+                            ERP Solutions
+                        </h3>
+
+
+                        <p>
+
+                            Business management and accounting
+                            solutions designed to organize,
+                            automate and simplify operations.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="service-card glass-card reveal">
+
+
+                        <span class="service-number">
+                            02
+                        </span>
+
+
+                        <div class="service-icon">
+                            ◇
+                        </div>
+
+
+                        <h3>
+                            Software Development
+                        </h3>
+
+
+                        <p>
+
+                            Custom software solutions designed
+                            around specific business processes
+                            and requirements.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="service-card glass-card reveal">
+
+
+                        <span class="service-number">
+                            03
+                        </span>
+
+
+                        <div class="service-icon">
+                            ◎
+                        </div>
+
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+
+                        <p>
+
+                            Modern responsive websites and web
+                            applications with clean, professional
+                            user experiences.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="service-card glass-card reveal">
+
+
+                        <span class="service-number">
+                            04
+                        </span>
+
+
+                        <div class="service-icon">
+                            ⌘
+                        </div>
+
+
+                        <h3>
+                            IT Solutions
+                        </h3>
+
+
+                        <p>
+
+                            Practical IT setup, configuration,
+                            troubleshooting and technology support.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="service-card glass-card reveal">
+
+
+                        <span class="service-number">
+                            05
+                        </span>
+
+
+                        <div class="service-icon">
+                            ▣
+                        </div>
+
+
+                        <h3>
+                            Windows Installation
+                        </h3>
+
+
+                        <p>
+
+                            Windows installation, drivers,
+                            system setup, configuration and
+                            optimization.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="service-card glass-card reveal">
+
+
+                        <span class="service-number">
+                            06
+                        </span>
+
+
+                        <div class="service-icon">
+                            ◉
+                        </div>
+
+
+                        <h3>
+                            Software Installation
+                        </h3>
+
+
+                        <p>
+
+                            Professional installation and setup
+                            of required business and productivity
+                            software.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="service-card glass-card reveal">
+
+
+                        <span class="service-number">
+                            07
+                        </span>
+
+
+                        <div class="service-icon">
+                            ▱
+                        </div>
+
+
+                        <h3>
+                            PC & Laptop Services
+                        </h3>
+
+
+                        <p>
+
+                            Computer setup, optimization,
+                            maintenance and technical support
+                            for PCs and laptops.
+
+                        </p>
+
+
+                    </article>
+
+
+
+                    <article class="service-card glass-card reveal">
+
+
+                        <span class="service-number">
+                            08
+                        </span>
+
+
+                        <div class="service-icon">
+                            +
+                        </div>
+
+
+                        <h3>
+                            Technology Support
+                        </h3>
+
+
+                        <p>
+
+                            Practical assistance for businesses
+                            and users who need dependable
+                            technology support.
+
+                        </p>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PRODUCTS
+            ================================================== -->
+
+            <section class="content-section"
+                     id="products">
+
+
+                <div class="section-heading reveal">
+
+
+                    <div class="section-label">
+
+                        Products & Solutions
+
+                    </div>
+
+
+                    <h2>
+
+                        Technology products
+                        for modern work.
+
+                    </h2>
+
+
+                    <p>
+
+                        Explore Axion's software, computer hardware,
+                        accessories and technology solutions.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="products-grid">
+
+
+                    <article class="product-card featured glass-card reveal">
+
+
+                        <div class="product-tag">
+                            Featured Solution
+                        </div>
+
+
+                        <h3>
+                            AccountifyERP
+                        </h3>
+
+
+                        <p>
+
+                            A complete business and accounting ERP
+                            designed to bring sales, purchases,
+                            inventory, accounts, parties, HR and
+                            reporting together in one powerful system.
+
+                        </p>
+
+
+                        <a href="#accountify"
+                           class="product-arrow"
+                           aria-label="Explore AccountifyERP">
+
+                            ↗
+
+                        </a>
+
+
+                    </article>
+
+
+
+                    <article class="product-card glass-card reveal">
+
+
+                        <div class="product-tag">
+                            Hardware
+                        </div>
+
+
+                        <h3>
+                            Laptops & PCs
+                        </h3>
+
+
+                        <p>
+
+                            Computers and laptops for business,
+                            productivity, education and everyday work.
+
+                        </p>
+
+
+                        <a href="#contact"
+                           class="product-arrow"
+                           aria-label="Contact Axion">
+
+                            ↗
+
+                        </a>
+
+
+                    </article>
+
+
+
+                    <article class="product-card glass-card reveal">
+
+
+                        <div class="product-tag">
+                            Accessories
+                        </div>
+
+
+                        <h3>
+                            Computer Accessories
+                        </h3>
+
+
+                        <p>
+
+                            Keyboards, mice, webcams, storage,
+                            cables and other essential computer
+                            accessories.
+
+                        </p>
+
+
+                        <a href="#contact"
+                           class="product-arrow"
+                           aria-label="Contact Axion">
+
+                            ↗
+
+                        </a>
+
+
+                    </article>
+
+
+
+                    <article class="product-card glass-card reveal">
+
+
+                        <div class="product-tag">
+                            Accessories
+                        </div>
+
+
+                        <h3>
+                            Laptop Accessories
+                        </h3>
+
+
+                        <p>
+
+                            Chargers, cooling pads, bags, stands,
+                            adapters and useful laptop accessories.
+
+                        </p>
+
+
+                        <a href="#contact"
+                           class="product-arrow"
+                           aria-label="Contact Axion">
+
+                            ↗
+
+                        </a>
+
+
+                    </article>
+
+
+
+                    <article class="product-card glass-card reveal">
+
+
+                        <div class="product-tag">
+                            Installation
+                        </div>
+
+
+                        <h3>
+                            Windows Installation
+                        </h3>
+
+
+                        <p>
+
+                            Windows installation, system setup,
+                            drivers and configuration.
+
+                        </p>
+
+
+                        <a href="#contact"
+                           class="product-arrow"
+                           aria-label="Contact Axion">
+
+                            ↗
+
+                        </a>
+
+
+                    </article>
+
+
+
+                    <article class="product-card glass-card reveal">
+
+
+                        <div class="product-tag">
+                            Software
+                        </div>
+
+
+                        <h3>
+                            Software Installation
+                        </h3>
+
+
+                        <p>
+
+                            Installation and configuration of
+                            essential software for your system.
+
+                        </p>
+
+
+                        <a href="#contact"
+                           class="product-arrow"
+                           aria-label="Contact Axion">
+
+                            ↗
+
+                        </a>
+
+
+                    </article>
+
+
+
+                    <article class="product-card glass-card reveal">
+
+
+                        <div class="product-tag">
+                            Services
+                        </div>
+
+
+                        <h3>
+                            PC & Laptop Services
+                        </h3>
+
+
+                        <p>
+
+                            Setup, optimization, maintenance
+                            and technical support for computers.
+
+                        </p>
+
+
+                        <a href="#contact"
+                           class="product-arrow"
+                           aria-label="Contact Axion">
+
+                            ↗
+
+                        </a>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACCOUNTIFY ERP
+            ================================================== -->
+
+            <section class="accountify-section"
+                     id="accountify">
+
+
+                <div class="accountify-wrapper">
+
+
+                    <div class="accountify-content reveal">
+
+
+                        <div class="section-label">
+
+                            Axion Product
+
+                        </div>
+
+
+                        <h2>
+
+                            Meet
+
+                            <span>
+                                AccountifyERP.
+                            </span>
+
+                        </h2>
+
+
+                        <p>
+
+                            A modern business management platform
+                            designed to help businesses manage their
+                            daily operations from one connected system.
+
+                        </p>
+
+
+                        <ul class="accountify-list">
+
+
+                            <li>
+                                Sales & Purchase Management
+                            </li>
+
+
+                            <li>
+                                Inventory & Item Ledger
+                            </li>
+
+
+                            <li>
+                                Customers & Suppliers
+                            </li>
+
+
+                            <li>
+                                Accounting & Financial Reports
+                            </li>
+
+
+                            <li>
+                                HR & Payroll Management
+                            </li>
+
+
+                            <li>
+                                Backup & Restore
+                            </li>
+
+
+                        </ul>
+
+
+                        <a href="#contact"
+                           class="primary-btn">
+
+                            Learn More
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         ERP DASHBOARD
+                    ================================================== -->
+
+                    <div class="erp-window reveal">
+
+
+                        <div class="erp-inner">
+
+
+                            <div class="erp-topbar">
+
+
+                                <div class="window-dots">
+
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+
+                                </div>
+
+
+                                <div class="erp-title">
+
+                                    AccountifyERP Dashboard
+
+                                </div>
+
+
+                                <div></div>
+
+
+                            </div>
+
+
+
+                            <div class="erp-body">
+
+
+                                <aside class="erp-sidebar">
+
+
+                                    <div class="erp-logo-small">
+
+
+                                        <img src="images/light_logo.png"
+                                             alt="Axion">
+
+
+                                        <span>
+                                            Accountify
+                                        </span>
+
+
+                                    </div>
+
+
+
+                                    <div class="erp-menu">
+
+
+                                        <div>
+                                            Dashboard
+                                        </div>
+
+
+                                        <div>
+                                            Sales
+                                        </div>
+
+
+                                        <div>
+                                            Purchase
+                                        </div>
+
+
+                                        <div>
+                                            Inventory
+                                        </div>
+
+
+                                        <div>
+                                            Parties
+                                        </div>
+
+
+                                        <div>
+                                            Accounts
+                                        </div>
+
+
+                                        <div>
+                                            HR
+                                        </div>
+
+
+                                        <div>
+                                            Reports
+                                        </div>
+
+
+                                    </div>
+
+
+                                </aside>
+
+
+
+                                <div class="erp-dashboard">
+
+
+                                    <div class="erp-dashboard-header">
+
+
+                                        <h4>
+                                            Dashboard
+                                        </h4>
+
+
+                                        <span class="erp-date">
+                                            Business Overview
+                                        </span>
+
+
+                                    </div>
+
+
+
+                                    <div class="erp-stats">
+
+
+                                        <div class="erp-stat">
+
+
+                                            <span>
+                                                Today's Sales
+                                            </span>
+
+
+                                            <strong>
+                                                Rs. 84,500
+                                            </strong>
+
+
+                                        </div>
+
+
+
+                                        <div class="erp-stat">
+
+
+                                            <span>
+                                                Cash Balance
+                                            </span>
+
+
+                                            <strong>
+                                                Rs. 245K
+                                            </strong>
+
+
+                                        </div>
+
+
+
+                                        <div class="erp-stat">
+
+
+                                            <span>
+                                                Items
+                                            </span>
+
+
+                                            <strong>
+                                                1,284
+                                            </strong>
+
+
+                                        </div>
+
+
+                                    </div>
+
+
+
+                                    <div class="erp-chart">
+
+
+                                        <div class="chart-lines">
+
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+
+                                        </div>
+
+
+                                        <div class="chart-wave"></div>
+
+
+                                    </div>
+
+
+
+                                    <div class="erp-bottom">
+
+
+                                        <div class="erp-bottom-card">
+
+
+                                            <span>
+                                                Monthly Sales
+                                            </span>
+
+
+                                            <strong>
+                                                Rs. 1.84M
+                                            </strong>
+
+
+                                        </div>
+
+
+
+                                        <div class="erp-bottom-card">
+
+
+                                            <span>
+                                                Invoices
+                                            </span>
+
+
+                                            <strong>
+                                                426
+                                            </strong>
+
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CONTACT
+            ================================================== -->
+
+            <section class="contact-section"
+                     id="contact">
+
+
+                <div class="contact-box glass-card reveal">
+
+
+                    <div class="section-label">
+
+                        Let's Work Together
+
+                    </div>
+
+
+                    <h2>
+
+                        Let's build something
+
+                        <br>
+
+                        <span>
+                            powerful.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Have a project, business requirement or
+                        technology need? Let's talk about how
+                        Axion Digital Systems can help.
+
+                    </p>
+
+
+                    <div class="contact-actions">
+
+
+                        <a href="mailto:info@axiondigitalsystems.com"
+                           class="primary-btn">
+
+                            Get Started
+
+                        </a>
+
+
+                        <a href="#home"
+                           class="text-btn">
+
+                            Back to top
+
+                            <span>
+                                ↑
+                            </span>
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <footer>
+
+
+            <a href="#home"
+               class="footer-logo">
+
+                <img src="images/light_logo.png"
+                     alt="Axion Digital Systems">
+
+            </a>
+
+
+            <div class="footer-copy">
+
+                © <span id="year"></span>
+                Axion Digital Systems.
+                All rights reserved.
+
+            </div>
+
+
+            <div class="footer-links">
+
+
+                <a href="#about">
+                    About
+                </a>
+
+
+                <a href="#services">
+                    Services
+                </a>
+
+
+                <a href="#products">
+                    Products
+                </a>
+
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+
+            </div>
+
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =========================================================
+           ELEMENTS
+        ========================================================= */
+
+        const navbar =
+            document.getElementById("navbar");
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        const navLinks =
+            document.querySelectorAll(".nav-links a");
+
+        const sections =
+            document.querySelectorAll("main section");
+
+
+        /* =========================================================
+           EXACT SECTION SCROLLING
+           
+           This fixes the problem shown in your screenshot.
+           
+           Instead of allowing the browser to position the section
+           wherever it wants, we calculate the exact position
+           underneath the sticky navbar.
+        ========================================================= */
+
+        function scrollToSection(id) {
+
+            const target =
+                document.getElementById(id);
+
+            if (!target) {
+                return;
+            }
+
+
+            const navbarHeight =
+                navbar.offsetHeight;
+
+
+            const navbarTop =
+                parseFloat(
+                    getComputedStyle(navbar).top
+                ) || 0;
+
+
+            const extraSpace = 18;
+
+
+            const targetPosition =
+                target.getBoundingClientRect().top
+                +
+                window.scrollY
+                -
+                navbarHeight
+                -
+                navbarTop
+                -
+                extraSpace;
+
+
+            window.scrollTo({
+
+                top:
+                    Math.max(0, targetPosition),
+
+                behavior:
+                    "smooth"
+
+            });
+
+        }
+
+
+        /* =========================================================
+           NAVIGATION CLICK HANDLER
+        ========================================================== */
+
+        navLinks.forEach(link => {
+
+            link.addEventListener(
+                "click",
+                function(event) {
+
+                    event.preventDefault();
+
+
+                    const targetId =
+                        this.getAttribute("href")
+                        .replace("#", "");
+
+
+                    scrollToSection(targetId);
+
+
+                    navbar.classList.remove(
+                        "mobile-open"
+                    );
+
+
+                    mobileMenu.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+
+                    mobileMenu.textContent =
+                        "☰";
+
+                }
+            );
+
+        });
+
+
+        /* =========================================================
+           LOGO CLICK
+        ========================================================== */
+
+        const logo =
+            document.querySelector(".logo");
+
+
+        logo.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+                scrollToSection("home");
+
+            }
+        );
+
+
+        /* =========================================================
+           ALL INTERNAL HASH LINKS
+           
+           This makes buttons such as:
+           Explore Services
+           Explore AccountifyERP
+           Back to top
+           
+           use the same accurate scrolling.
+        ========================================================== */
+
+        document
+            .querySelectorAll('a[href^="#"]')
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    function(event) {
+
+                        const href =
+                            this.getAttribute("href");
+
+
+                        if (
+                            !href ||
+                            href === "#" ||
+                            this.classList.contains("nav-links")
+                        ) {
+                            return;
+                        }
+
+
+                        const targetId =
+                            href.substring(1);
+
+
+                        const target =
+                            document.getElementById(
+                                targetId
+                            );
+
+
+                        if (!target) {
+                            return;
+                        }
+
+
+                        event.preventDefault();
+
+
+                        scrollToSection(
+                            targetId
+                        );
+
+
+                        navbar.classList.remove(
+                            "mobile-open"
+                        );
+
+
+                        mobileMenu.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+
+                        mobileMenu.textContent =
+                            "☰";
+
+                    }
+                );
+
+            });
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================== */
+
+        mobileMenu.addEventListener(
+            "click",
+            function() {
+
+                const isOpen =
+                    navbar.classList.toggle(
+                        "mobile-open"
+                    );
+
+
+                this.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
+
+
+                this.textContent =
+                    isOpen ? "×" : "☰";
+
+            }
+        );
+
+
+        /* =========================================================
+           ACTIVE NAVIGATION
+           
+           Updates the navbar based on the section currently
+           visible on screen.
+        ========================================================== */
+
+        const sectionObserver =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
+
+
+                        const id =
+                            entry.target.id;
+
+
+                        navLinks.forEach(link => {
+
+                            link.classList.remove(
+                                "active"
+                            );
+
+                        });
+
+
+                        const activeLink =
+                            document.querySelector(
+                                `.nav-links a[href="#${id}"]`
+                            );
+
+
+                        if (activeLink) {
+
+                            activeLink.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    rootMargin:
+                        "-35% 0px -55% 0px",
+
+                    threshold:
+                        0
+                }
+
+            );
+
+
+        sections.forEach(section => {
+
+            sectionObserver.observe(
+                section
+            );
+
+        });
+
+
+        /* =========================================================
+           REVEAL ANIMATIONS
+        ========================================================== */
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+
+        const revealObserver =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+
+                            revealObserver.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold:
+                        0.08
+                }
+
+            );
+
+
+        revealElements.forEach(element => {
+
+            revealObserver.observe(
+                element
+            );
+
+        });
+
+
+        /* =========================================================
+           CURRENT YEAR
+        ========================================================== */
+
+        document.getElementById("year")
+            .textContent =
+            new Date().getFullYear();
+
+
+        /* =========================================================
+           CLOSE MOBILE MENU WHEN RESIZING TO DESKTOP
+        ========================================================== */
+
+        window.addEventListener(
+            "resize",
+            function() {
+
+                if (
+                    window.innerWidth > 820
+                ) {
+
+                    navbar.classList.remove(
+                        "mobile-open"
+                    );
+
+
+                    mobileMenu.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+
+                    mobileMenu.textContent =
+                        "☰";
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           HANDLE DIRECT HASH URL
+           
+           Example:
+           index.html#about
+           
+           It will correctly position the About section.
+        ========================================================== */
+
+        window.addEventListener(
+            "load",
+            function() {
+
+                const hash =
+                    window.location.hash;
+
+
+                if (
+                    hash &&
+                    document.getElementById(
+                        hash.substring(1)
+                    )
+                ) {
+
+                    setTimeout(
+                        function() {
+
+                            scrollToSection(
+                                hash.substring(1)
+                            );
+
+                        },
+                        100
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
